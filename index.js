@@ -11,6 +11,7 @@ module.exports = function(options){
       const commands = [];
 
       command.split("|").forEach( function(input){
+
         const cargv = input.match(/\\?.|^$/g).reduce((p, c) => {
         if(c === '"'){
             p.quote ^= 1;
@@ -28,12 +29,14 @@ module.exports = function(options){
         const command = {};
 
         if(optionized._.length > 0){
-          command.command = optionized._.shift();
+          command.program = optionized._.shift();
           if (optionized._.length == 0){
             delete optionized._;
           }
         }
-        Object.assign(command,optionized)
+
+        Object.assign(command, node.dataset, optionized)
+
 
         commands.push(command);
 
