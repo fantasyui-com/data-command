@@ -1,6 +1,6 @@
 {
   "name": "data-command",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "description": "A revolutionary new way of combining application UI and their data needs.",
   "main": "index.js",
   "scripts": {
